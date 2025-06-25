@@ -40,7 +40,7 @@ function App() {
             setLoading(true);
             setError(null);
             try {
-                const response = await fetch(`${API_BASE_URL}/states`);
+                const response = await fetch(`${API_BASE_URL}/api/states`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -63,7 +63,7 @@ function App() {
                 setLoading(true);
                 setError(null);
                 try {
-                    const response = await fetch(`${API_BASE_URL}/districts/${encodeURIComponent(selectedState)}`);
+                    const response = await fetch(`${API_BASE_URL}/api/districts/${encodeURIComponent(selectedState)}`);
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);
                     }
@@ -93,7 +93,7 @@ function App() {
                 setLoading(true);
                 setError(null);
                 try {
-                    const response = await fetch(`${API_BASE_URL}/subdistricts/${encodeURIComponent(selectedState)}/${encodeURIComponent(selectedDistrict)}`);
+                    const response = await fetch(`${API_BASE_URL}/api/subdistricts/${encodeURIComponent(selectedState)}/${encodeURIComponent(selectedDistrict)}`);
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);
                     }
@@ -122,7 +122,7 @@ function App() {
                 setLoading(true);
                 setError(null);
                 try {
-                    const response = await fetch(`${API_BASE_URL}/facilities/${encodeURIComponent(selectedState)}/${encodeURIComponent(selectedDistrict)}/${encodeURIComponent(selectedSubdistrict)}`);
+                    const response = await fetch(`${API_BASE_URL}/api/facilities/${encodeURIComponent(selectedState)}/${encodeURIComponent(selectedDistrict)}/${encodeURIComponent(selectedSubdistrict)}`);
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);
                     }
@@ -152,7 +152,7 @@ function App() {
                 setSearchResults(null); // Clear previous results
 
                 try {
-                    const response = await fetch(`${API_BASE_URL}/referral`, {
+                    const response = await fetch(`${API_BASE_URL}/api/referral`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
