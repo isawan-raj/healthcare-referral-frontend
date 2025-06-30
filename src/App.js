@@ -311,8 +311,12 @@ function App() {
                         )}
                     </div>
                 )}
+            <footer className="mt-8 pt-4 border-t border-gray-200 text-center text-gray-600 text-sm">
+                <p>Developed by Sawan Raj</p>
+            </footer>
             </div>
         </div>
+
     );
 }
 
